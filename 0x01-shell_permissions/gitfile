@@ -1,0 +1,3 @@
+#!/usr/bin/git add 
+#!/usr/bin/git commit -m "Task solution added"
+#!/usr/bin/git push origin master
