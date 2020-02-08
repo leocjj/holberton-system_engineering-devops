@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Script list files names after the first dash
 
-LIST="$(ls | cut --delimiter='-' --fields=1 --complement)"
+LIST="$(find -mindepth 1 -maxdepth 1 | cut --delimiter='-' --fields=1 --complement)"
 for i in $LIST
 do
     echo "$i"
