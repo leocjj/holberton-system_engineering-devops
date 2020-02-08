@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
-# Script that gives you information about the holbertonschool file.
+# Script that gives you information about /etc/passwd.
 
-file="$(cat /etc/passwd)"
-
-for line in $file
+while read line
 do
-    echo "$line" | cut -d':' -f1,3,6
-done
+    echo "$line" | cut -f1,3,6 -d":"
+done < /etc/passwd
