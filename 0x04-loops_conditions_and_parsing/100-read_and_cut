@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Script that gives you information about the holbertonschool file.
+
+file="$(cat /etc/passwd)"
+
+for line in $file
+do
+    echo "$line" | cut -d':' -f1,3,6
+done
