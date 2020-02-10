@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Script that display all BASH PIDs
+# shellcheck disable=SC2009
+pgrep -l "bash"
