@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Script that definitly kill another process with the file name
+
+pkill -f -9 "7-highlander"
