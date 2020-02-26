@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Script that change localhost to 127.0.0.2 and facebook.com resolve to 8.8.8.8
+# Change localhost to 127.0.0.2 and facebook.com resolve to 8.8.8.8
 
 cp /etc/hosts ~/hosts.new
 echo "127.0.0.2 localhost" > ~/hosts2.new
