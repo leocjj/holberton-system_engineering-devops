@@ -7,12 +7,12 @@
 
   # create index.html
   file { '/var/www/html/index.html':
-    path    => '/var/www/html/index.html'
+    path    => '/var/www/html/index.html',
     content => 'Holberton School'
   }
 
   # Redirection configuration
-  file_line { 'title':
+  file_line { 'redirection':
     ensure   => present,
     path     => '/etc/nginx/sites-available/default',
     after    => 'server_name _;',
@@ -23,12 +23,12 @@
   # create custom_404.html
   file { '/usr/share/nginx/html/custom_404.html':
     ensure  => 'present',
-    content => "Ceci n'est pas une page"
+    content => "Ceci n'est pas une page",
     require => Package['nginx']
   }
 
   # Error 404 configuration
-  file_line { 'title':
+  file_line { 'error404':
     ensure   => present,
     path     => '/etc/nginx/sites-available/default',
     after    => 'listen 80 default_server;',
@@ -37,7 +37,7 @@
   }
 
   # start server to apply changes
-  service { 'ngins':
+  service { 'nginx':
     ensure  => running,
     require => Package['nginx']
   }
