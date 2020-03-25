@@ -1,0 +1,98 @@
+
+leocjj.tech
+https://get.tech/cpanel-login
+
+ssh -i ~/.ssh/holberton ubuntu@104.196.66.20
+
+scp -i ~/.ssh/holberton README.md ubuntu@104.196.66.20:~/README.md
+
+ssh ubuntu@8.8.8.8 -i /vagrant/sylvain 'ls ~/'
+
+ssh -i ~/.ssh/holberton ubuntu@104.196.66.20 'ls ~/'
+
+./0-transfer_file page.html 104.196.66.20 ubuntu ~/.ssh/holberton
+	scp -i ~/.ssh/holberton page.html ubuntu@104.196.66.20:~/
+
+------------------------------------------------------------------
+
+apt-get -y install 	// Automatic yes to prompts;
+
+*******************************************************************************
+				nging server
+*******************************************************************************
+https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-16-04
+https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-in-ubuntu-16-04
+https://www.digitalocean.com/community/tutorials/how-to-set-up-nginx-server-blocks-virtual-hosts-on-ubuntu-16-04
+https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-16-04
+
+
+*** Instalation ***
+
+	sudo apt-get -y update
+	sudo apt-get -y install nginx
+	[sudo apt-get -y install ufw]		# sudo ufw app list
+	sudo ufw allow 'Nginx HTTP'			# sudo ufw status
+
+	sudo systemctl status nginx			# To check
+
+
+*** check own IP ***
+
+	ip addr show eth0 | grep inet | awk '{ print $2; }' | sed 's/\/.*$//'
+
+	sudo apt-get install curl		# 
+	curl -4 icanhazip.com
+
+	http://server_domain_or_IP
+
+
+*** start/stop/restart ***
+
+	sudo systemctl stop nginx		# To stop
+	sudo systemctl start nginx		# To start
+	sudo systemctl reload nginx		# To reload without dropping connections.
+
+	sudo systemctl disable nginx	# Disable start automatically when the server boots.
+	sudo systemctl enable nginx
+
+
+*** directories ***
+
+Content
+
+/var/www/html
+	The actual web content, which by default only consists of the default Nginx
+	page you saw earlier, is served out of the /var/www/html directory.
+	This can be changed by altering Nginx configuration files.
+
+Server Configuration
+
+/etc/nginx
+	The Nginx configuration directory. All of the Nginx configuration files reside here.
+
+/etc/nginx/nginx.conf
+	The main Nginx configuration file. This can be modified to make changes to the Nginx global configuration.
+
+/etc/nginx/sites-available/
+	The directory where per-site “server blocks” can be stored. Nginx will not use the configuration files found in this directory unless they are linked to the sites-enabled directory (see below). Typically, all server block configuration is done in this directory, and then enabled by linking to the other directory.
+
+/etc/nginx/sites-enabled/
+	The directory where enabled per-site “server blocks” are stored. Typically,
+	these are created by linking to configuration files found in the sites-available directory.
+
+/etc/nginx/snippets
+	This directory contains configuration fragments that can be included
+	elsewhere in the Nginx configuration. Potentially repeatable configuration
+	segments are good candidates for refactoring into snippets.
+
+Server Logs
+
+/var/log/nginx/access.log
+	Every request to your web server is recorded in this log file unless Nginx is configured to do otherwise.
+
+/var/log/nginx/error.log
+	Any Nginx errors will be recorded in this log.
+
+
+
+
