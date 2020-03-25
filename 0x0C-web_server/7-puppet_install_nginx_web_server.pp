@@ -2,8 +2,8 @@
 
   # install nginx server
   package { 'nginx':
-    ensure   => 'installed',
-    name   => 'nginx'
+    ensure => installed,
+    name   => 'nginx',
   }
   
   # create index.html
