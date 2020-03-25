@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# script that creates an nginx web server
+
+sudo apt-get -y update
+# Install nginx server
+sudo apt-get -y install nginx
+# Firewall port 80
+sudo ufw allow 'Nginx HTTP'
+# Create index file
+echo "Holberton School" > /var/www/html/index.html
+# Redirection configuration
+sudo sed -i "/listen 80 default_server/a rewrite ^/redirect_me https://www.youtube.com/watch?v=dQw4w9WgXcQ permanent;" /etc/nginx/sites-available/default
+# Custom page 404
+echo "Ceci n'est pas une page" > /usr/share/nginx/html/custom_404.html
+# Error page 404
+sudo sed -i "/listen 80 default_server/a error_page 404 /custom_404.html;\n \t location = /custom_404.html {\n \t\t root /usr/share/nginx/html;\n \t\t internal;\n \t}" /etc/nginx/sites-available/default
+# Restart server to apply changes
+sudo service nginx restart
