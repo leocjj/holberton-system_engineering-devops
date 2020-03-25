@@ -3,8 +3,9 @@
   # install nginx server
   package { 'nginx':
     ensure   => 'installed'
+    name   => 'nginx',
   }
-
+  
   # create index.html
   file { '/var/www/html/index.html':
     path    => '/var/www/html/index.html',
