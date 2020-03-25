@@ -19,7 +19,7 @@ Billing Contact: Email Address: billing@get.tech Tel No.: +1.4152404171
 
 ssh -i ~/.ssh/holberton ubuntu@104.196.66.20			// To connect
 
-scp -i ~/.ssh/holberton README.md ubuntu@104.196.66.20:~/README.md	//copy file
+		//copy file
 
 scp -i ~/.ssh/holberton -r files ubuntu@104.196.66.20:~/README.md	//copy dir
 
