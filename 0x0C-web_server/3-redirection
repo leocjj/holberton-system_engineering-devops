@@ -8,7 +8,7 @@ sudo apt-get -y install nginx
 sudo ufw allow 'Nginx HTTP'
 # Create index file
 echo "Holberton School" > /var/www/html/index.html
-# Redirection
-sed -i "/listen 80 default_server/a rewrite ^/redirect_me https://www.youtube.com/watch?v=dQw4w9WgXcQ permanent;" /etc/nginx/sites-available/default
+# Redirection configuration
+sudo sed -i "/listen 80 default_server/a rewrite ^/redirect_me https://www.youtube.com/watch?v=dQw4w9WgXcQ permanent;" /etc/nginx/sites-available/default
 # Restart server to apply changes
 sudo service nginx restart
