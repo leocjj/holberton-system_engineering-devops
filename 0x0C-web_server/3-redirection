@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# script that creates an nginx web server
+
+sudo apt-get -y update
+# Install nginx server
+sudo apt-get -y install nginx
+# Firewall port 80
+sudo ufw allow 'Nginx HTTP'
+# Create index file
+echo "Holberton School" > /var/www/html/index.html
+# Redirection
+sed -i '/listen 80 default_server/a rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;\n' /etc/nginx/sites-available/default
+# Restart server to apply changes
+sudo service nginx restart
