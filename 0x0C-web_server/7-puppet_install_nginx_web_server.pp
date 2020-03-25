@@ -1,19 +1,16 @@
-# Configuring a nginx server.	
+# install and configure an ubuntu servr 16.04 using puppet
 
-# install nginx server
 package { 'nginx':
   ensure => installed,
   name   => 'nginx',
 }
 
-# create index.html
 file { '/var/www/html/index.html':
-  path    => '/var/www/html/index.html',
-  content => 'Holberton School'
+  content => 'Holberton School for the win!',
+  path    => '/var/www/html/index.html'
 }
 
-# Redirection configuration
-file_line { 'redirection':
+file_line { 'title':
   ensure   => present,
   path     => '/etc/nginx/sites-available/default',
   after    => 'server_name _;',
@@ -21,8 +18,7 @@ file_line { 'redirection':
   multiple => true
 }
 
-# start server to apply changes
 service { 'nginx':
   ensure  => running,
-  require => Package['nginx']
+  require => Package['nginx'],
 }
