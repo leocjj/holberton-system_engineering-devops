@@ -1,21 +1,14 @@
-# Project 0x0C.
+# Project 0x0D.
 
-# Web server
+# Web stack debugging #0
 
 
 
 For this project, students are expected to look at these concepts:
 
-    DNS
-    Web Server
-    CI/CD
+    Network basics
     Docker
     Web stack debugging
-    DevOps
-    System Administration
-    Site Reliability Engineering
-
-
 
 ## Resources
 ### Read or watch:
