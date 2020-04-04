@@ -11,8 +11,8 @@ package { 'nginx':
 
 file { '/var/www/html/index.html':
   content => 'Holberton School for the win!',
-  path    => '/var/www/html/index.html'
-  require => Package['nginx'],
+  path    => '/var/www/html/index.html',
+  require => Package['nginx']
 }
 
 file_line { 'title':
@@ -20,8 +20,7 @@ file_line { 'title':
   path     => '/etc/nginx/sites-available/default',
   after    => 'server_name _;',
   line     => 'rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;',
-  multiple => true
-  require => Package['nginx'],
+  require => Package['nginx']
 }
 
 file_line { 'header':
@@ -29,10 +28,10 @@ file_line { 'header':
   path   => '/etc/nginx/sites-available/default',
   after  => 'server_name _;',
   line   => 'add_header X-Served-By "$HOSTNAME";',
-  require => Package['nginx'],
+  require => Package['nginx']
 }
 
 service { 'nginx':
   ensure  => running,
-  require => Package['nginx'],
+  require => Package['nginx']
 }
