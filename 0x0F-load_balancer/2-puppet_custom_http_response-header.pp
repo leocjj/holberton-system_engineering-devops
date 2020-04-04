@@ -1,8 +1,12 @@
 # install and configure an ubuntu servr 16.04 using puppet
 
+exec { 'update':
+  command => '/usr/bin/apt-get -y update',
+}
+
 package { 'nginx':
-  ensure => installed,
-  name   => 'nginx',
+  ensure  => installed,
+  require => Exec['update']
 }
 
 file { '/var/www/html/index.html':
@@ -16,6 +20,7 @@ file_line { 'title':
   after    => 'server_name _;',
   line     => 'rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;',
   multiple => true
+  require => Package['nginx'],
 }
 
 file_line { 'header':
