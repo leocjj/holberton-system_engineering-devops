@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
 # script that change default listening port from 8080 to 80
-sed -i -e 's/8080/80/g' /etc/nginx/sites-enabled/default
+sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
 pkill -1 nginx
-
-
