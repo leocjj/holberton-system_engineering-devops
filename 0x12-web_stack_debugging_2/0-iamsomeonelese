@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# script that run software as another user
+su -c %1 whoami
+
