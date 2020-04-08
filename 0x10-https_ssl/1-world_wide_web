@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+# script that run software as another user
+
+if [ "$#" == 1 ]; then
+  # www
+  answer=$(dig www."$1" | grep -A1 'ANSWER SECTION:' | tail -1)
+  rt=$(echo "$answer" | awk '{printf $4}')  #RECORD_TIPE
+  d=$(echo "$answer" | awk '{printf $5}')  #DESTINATION
+  printf "The subdomain www is a %s record and points to %s\n" "$rt" "$d"
+  # lb-01
+  answer=$(dig lb-01."$1" | grep -A1 'ANSWER SECTION:' | tail -1)
+  rt=$(echo "$answer" | awk '{printf $4}')  #RECORD_TIPE
+  d=$(echo "$answer" | awk '{printf $5}')  #DESTINATION
+  printf "The subdomain lb-01 is a %s record and points to %s\n" "$rt" "$d"
+  # web-01
+  answer=$(dig web-01."$1" | grep -A1 'ANSWER SECTION:' | tail -1)
+  rt=$(echo "$answer" | awk '{printf $4}')  #RECORD_TIPE
+  d=$(echo "$answer" | awk '{printf $5}')  #DESTINATION
+  printf "The subdomain web-01 is a %s record and points to %s\n" "$rt" "$d"
+  # web-02
+  answer=$(dig web-02."$1" | grep -A1 'ANSWER SECTION:' | tail -1)
+  rt=$(echo "$answer" | awk '{printf $4}')  #RECORD_TIPE
+  d=$(echo "$answer" | awk '{printf $5}')  #DESTINATION
+  printf "The subdomain web-02 is a %s record and points to %s\n" "$rt" "$d"
+
+
+elif [ "$#" == 2 ]; then
+  answer=$(dig "$2.$1" | grep -A1 'ANSWER SECTION:' | tail -1)
+  rt=$(echo "$answer" | awk '{printf $4}')  #RECORD_TIPE
+  d=$(echo "$answer" | awk '{printf $5}')  #DESTINATION
+  printf "The subdomain %s is a %s record and points to %s\n" "$2" "$rt" "$d"
+
+fi
