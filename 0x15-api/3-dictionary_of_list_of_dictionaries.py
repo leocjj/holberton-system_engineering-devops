@@ -7,6 +7,10 @@ export data in the JSON format.
 """
 
 if __name__ == '__main__':
+    import requests
+    import json
+    from sys import argv
+
     ids = set()
     r = requests.get('https://jsonplaceholder.typicode.com/posts')
     data = r.json()
