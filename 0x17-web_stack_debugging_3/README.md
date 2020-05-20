@@ -38,6 +38,15 @@ At the end of this project, you are expected to be able to explain to anyone, wi
     The first line of all your Bash scripts should be exactly #!/usr/bin/env bash
     The second line of all your Bash scripts should be a comment explaining what is the script doing
 
+##More Info
+
+### Install puppet-lint
+
+```
+$ apt-get install -y ruby
+$ gem install puppet-lint -v 2.1.1
+```
+
 
 ## Tasks
 
