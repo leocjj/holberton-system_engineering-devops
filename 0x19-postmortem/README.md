@@ -26,7 +26,7 @@ The root cause was a typo in the name of a file in a config file of the webserve
 * 00:50 typo was found almost at the end of the file.
 * 00:52 typo was corrected and uploaded.
 * 00:53 web server was restarted.
-* 00:55 the engineer in charge try to see the main web page and realize that everything was working fine.
+* 00:55 the engineer in charge tried to see the main web page and realize that everything was working fine.
 
 
 ## Root cause and resolution
