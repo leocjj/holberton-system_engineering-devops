@@ -15,29 +15,35 @@
 
 
 ## Timeline
- format: time - keep it short, 1 or 2 sentences) must contain:
-* when was the issue detected
-* how was the issue detected (monitoring alert, an engineer noticed something, a customer complained…)
-* actions taken (what parts of the system were investigated, what were the assumption on the root cause of the issue)
-* misleading investigation/debugging paths that were taken
-* which team/individuals was the incident escalated to
-* how the incident was resolved
+
+* 00:20 new config file for web server was finished
+* 00:22 new config file was uploaded
+* 00:23 web server was restarted
+* 00:25 the engineer in charge try to see the main web page and realize that the server was downed.
+* 00:26 technicians started to verify every line of the new config line. The old file wasn't restored to avoid additional impact because nobody knew what was going on.
+* 00:46 all line was verified but the initial focus was on the content of related files linked to the config file.
+* 00:48 after a complete revision, the root cause wasn't found so engineer in charge requested a typo review of the file.
+* 00:50 typo was found almost at the end of the file.
+* 00:52 typo was corrected and uploaded.
+* 00:53 web server was restarted.
+* 00:55 the engineer in charge try to see the main web page and realize that everything was working fine.
+
 
 ## Root cause and resolution
 
 ### Root cause
+
+Misspelling word in a config file due to human error.
+No tests were performed for the final part of the config file.
+
 ### Resolution
-detail how the issue was fixed
+* Config file was correted.
+* New protocol to test config file was proposed.
 
 ## Corrective and preventative measures
 ### can be improved/fixed
-broadly speaking
 ### a list of tasks to address the issue
-(be very specific, like a TODO, example: patch Nginx server, add monitoring on server memory…)
 
-
-
-400 to 600 words
 
 
 ## Author
