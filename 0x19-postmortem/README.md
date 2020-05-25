@@ -7,7 +7,7 @@
 
 ## Issue Summary
 
-    The server was dowed by approximately half and hour after a new configuration made by an engineer while deploying a new feature, from 00:25 to 00:55 EST Saturday 05-24-2020.
+    The server was dowed by approximately half an hour after a new configuration made by an engineer while deploying a new feature, from 00:25 to 00:55 EST Saturday 05-24-2020.
 
     The main webserver was impacted so the main web page of the company was inaccessible during this period. Application server wan not affected but according to logs just 3% of users do.
 
@@ -37,13 +37,19 @@ Misspelling word in a config file due to human error.
 No tests were performed for the final part of the config file.
 
 ### Resolution
-* Config file was correted.
-* New protocol to test config file was proposed.
+* Config file was typo corrected in line number 78, the extension file had the last letter repeated.
+
 
 ## Corrective and preventative measures
-### can be improved/fixed
-### a list of tasks to address the issue
 
+### Can be improved/fixed
+* New config file was reviewed twice after the server was up.
+* Config files must be fully tested line by line so new protocol for this task is proposed for approval (see attachment).
+
+### A list of tasks to address the issue
+* To patch webserver config file.
+* Add new monitoring tasks on the server.
+* New config file review performed by a new team.
 
 
 ## Author
