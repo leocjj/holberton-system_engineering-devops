@@ -7,11 +7,11 @@
 
 ## Issue Summary
 
-    The server was dowed by approximately half an hour after a new configuration made by an engineer while deploying a new feature, from 00:25 to 00:55 EST Saturday 05-24-2020.
+The server was dowed by approximately half an hour after a new configuration made by an engineer while deploying a new feature, from 00:25 to 00:55 EST Saturday 05-24-2020.
 
-    The main webserver was impacted so the main web page of the company was inaccessible during this period. Application server wan not affected but according to logs just 3% of users do.
+The main webserver was impacted so the main web page of the company was inaccessible during this period. Application server wan not affected but according to logs just 3% of users do.
 
-    The root cause was a typo in the name of a file in a config file of the webserver.
+The root cause was a typo in the name of a file in a config file of the webserver.
 
 
 ## Timeline
